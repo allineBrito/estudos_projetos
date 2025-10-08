@@ -161,7 +161,7 @@ button:hover {
     "Colonização do Brasil (século XVI e XVII)": {
       "Português": "/${REPO_NAME}/audio/portuges-chegada.mp3", 
       "Indígena": "audio/portuges-chegada.mp3",
-      "Africano escravizado": "audio/negros-chegada.wav",
+      "Africano escravizado": "https://assets.mixkit.co/active_storage/sfx/257/257-preview.mp3",
     },
     "Período das Revoltas Regenciais (1831 – 1840)": {
       "Cronista português": "audio/revolta_port.mp3",
@@ -278,49 +278,39 @@ function populateNarrators(){
     });
   }
 }
-eventoSelect.addEventListener('change', populateNarrators);
-populateNarrators();
+playAudioBtn.addEventListener('click', ()=>{
+  const ev = eventoSelect.value;
+  const nar = narradorSelect.value;
+  
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
 
-resetViewBtn.addEventListener('click', ()=>{
-  eventoSelect.selectedIndex=0;
-  narradorSelect.innerHTML='';
-  narrativeText.textContent='Selecione um evento e um narrador, depois clique em "Mostrar narrativa".';
-  eventImageContainer.innerHTML='';
-  playADBtn.disabled=true;
-  comparisonArea.innerHTML='';
-  updateRecordingStatus('');
-});
+  const audioPath = audioMapping[ev] ? audioMapping[ev][nar] : null;
 
-document.getElementById('showNarrative').addEventListener('click', ()=>{
-  const ev=eventoSelect.value, nar=narradorSelect.value;
-  if(ev && nar){
-    if (nar === "Estudante" && hasRecordingForCurrentEvent()) {
-      narrativeText.textContent = "🎤 Narrativa em áudio disponível - clique em 'Reproduzir Gravação' para ouvir.";
-    } else {
-      narrativeText.textContent = data[ev].narrativas[nar];
-    }
-
-    const eventImgSrc = eventImageMapping[ev] ? eventImageMapping[ev][nar] : '';
-    let imageToShow = '';
-    let altText = '';
-
-    if(eventImgSrc){
-      imageToShow = eventImgSrc;
-      altText = `Imagem do evento ${ev} na perspectiva de ${nar}`;
-    } else {
-      imageToShow = imageMapping[nar] || '';
-      altText = `Imagem ilustrativa do narrador ${nar}`;
-    }
+  if (audioPath) {
+    currentAudio = new Audio(audioPath);
     
-    if (imageToShow) {
-      eventImageContainer.innerHTML=`<img src="${imageToShow}" alt="${altText}">`;
-    } else {
-      eventImageContainer.innerHTML = '';
-    }
+    currentAudio.addEventListener('error', (e) => {
+      console.error('Erro no áudio:', e);
+      console.log('Tentando reproduzir via TTS...');
+      speakText(data[ev].narrativas[nar], "pt-BR");
+    });
+
+    currentAudio.addEventListener('canplaythrough', () => {
+      currentAudio.play().catch(error => {
+        console.error('Erro ao reproduzir:', error);
+        speakText(data[ev].narrativas[nar], "pt-BR");
+      });
+    });
+
+    // Força o carregamento
+    currentAudio.load();
     
-    playADBtn.disabled=!data[ev].ad[nar];
-    playADBtn.onclick=()=>speakText(data[ev].ad[nar],"pt-BR");
-    comparisonArea.innerHTML='';
+  } else if (ev && nar) {
+    console.log("Usando TTS como fallback");
+    speakText(data[ev].narrativas[nar], "pt-BR");
   }
 });
 
