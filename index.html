@@ -5,28 +5,24 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Históricas Decoloniais</title>
 <style>
-
-/* --- ESTILOS DE VISUALIZAÇÃO E ANIMAÇÃO --- */
 .main-title {
   font-size: 28px;
   font-weight: bold;
   background: linear-gradient(90deg, #c59f9f, #f3b735, #17c0e6, #0edba5);
-  color: #4b2e2e; /* marrom escuro */
+  color: #4b2e2e;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid #a0522d; /* cursor marrom */
+  border-right: 3px solid #a0522d;
   width: 0;
   animation: typing 4s steps(50, end) forwards,
              blink 0.8s step-end infinite;
 }
 
-/* Digitação */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
 
-/* Cursor piscando */
 @keyframes blink {
   50% { border-color: transparent; }
 }
@@ -34,40 +30,40 @@
 .subtitle {
   text-align: center;
   font-size: 1.2rem;
-  color: linear-gradient(90deg, #c59f9f, #f3b735, #17c0e6, #0edba5);
+  color: #4b2e2e;
   max-width: 800px;
   margin: 0 auto 1rem auto;
   line-height: 1.5;
 }
 
-  :root {
+:root {
   --bg:#fbf6f6; 
-  --card:#d8d0d0; /* cor do fundo dos quadros - marrom claro (wheat) */
+  --card:#d8d0d0;
   --fg:#0b1220; 
   --muted:#556;
-  --accent:#a0522d; /* já trocado para marrom */
+  --accent:#a0522d;
 }
 
- body{
+body{
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 1rem;
-  background: #dabbac;  /* marrom claro (tom tipo "tan") */
+  background: #dabbac;
   color: var(--fg);
 }
 
-  h1,h2{ text-align:center; }
-  .card{
-    background:var(--card); border-radius:12px; padding:1rem;
-    margin:1rem auto; max-width:900px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
-  }
-  select,button{
-    padding:0.5rem; margin:0.25rem 0; border-radius:6px; border:1px solid #6e6b6b;
-    font-size:1rem;
-  }
-  button {
-  background-color: #a0522d;  /* cor de fundo do botão */
-  color: #fff;               /* cor do texto */
+h1,h2{ text-align:center; }
+.card{
+  background:var(--card); border-radius:12px; padding:1rem;
+  margin:1rem auto; max-width:900px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+select,button{
+  padding:0.5rem; margin:0.25rem 0; border-radius:6px; border:1px solid #6e6b6b;
+  font-size:1rem;
+}
+button {
+  background-color: #a0522d;
+  color: #fff;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -75,45 +71,78 @@
 }
 
 button:hover {
-  background-color: #8b4513; /* cor no hover */
+  background-color: #8b4513;
 }
 
-  button:hover{ opacity:0.9; }
-  button:disabled{
-    background:#ccc; color:#666; cursor:not-allowed;
-  }
-  img{ max-width:100%; border-radius:8px; margin:0.5rem 0; }
-  .audio-btn{ margin-right:0.5rem; }
-  .compare-grid{
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:1rem; margin-top:1rem;
-  }
+button:hover{ opacity:0.9; }
+button:disabled{
+  background:#ccc; color:#666; cursor:not-allowed;
+}
+img{ max-width:100%; border-radius:8px; margin:0.5rem 0; }
+.audio-btn{ margin-right:0.5rem; }
+.compare-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1rem; margin-top:1rem;
+}
 
-  /* Estilos para a gravação */
-  .recording-status {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 6px;
-    text-align: center;
-    font-weight: bold;
-  }
-  .recording-active {
-    background-color: #ffebee;
-    color: #c62828;
-    border: 1px solid #c62828;
-  }
-  .recording-saved {
-    background-color: #e8f5e8;
-    color: #2e7d32;
-    border: 1px solid #2e7d32;
-  }
+.recording-status {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+.recording-active {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #c62828;
+}
+.recording-saved {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #2e7d32;
+}
+
+.voice-indicator {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  background-color: #e0e0e0;
+}
+
+.voice-portugues {
+  background-color: #ffccbc;
+  color: #bf360c;
+}
+
+.voice-indigena {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.voice-africano {
+  background-color: #b3e5fc;
+  color: #01579b;
+}
+
+.voice-estudante {
+  background-color: #e1bee7;
+  color: #4a148c;
+}
+
+.voice-info {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+  font-style: italic;
+}
 </style>
 </head>
 <body>
 <h1 class="main-title">Histórias em Vozes: Um Olhar Decolonial</h1>
-<p class="subtitle">Agora vamos comparar as narrativas historicas, podemos dizer que a historia dos livros sempre tem razão em relação aos eventos histróricos?</p>
-
-
+<p class="subtitle">Agora vamos comparar as narrativas históricas, podemos dizer que a história dos livros sempre tem razão em relação aos eventos históricos?</p>
 
 <div class="card" aria-label="Seleção e narrativa">
   <fieldset>
@@ -128,14 +157,15 @@ button:hover {
   </fieldset>
 
   <div id="narrativeArea">
-    <h2>Narrativa</h2>
+    <h2>Narrativa <span id="voiceIndicator" class="voice-indicator"></span></h2>
     <div id="narrativeText">Selecione um evento e um narrador, depois clique em "Mostrar narrativa".</div>
     <div id="eventImageContainer"></div>
     <div id="audioControls">
       <button id="playAudio" class="audio-btn">▶️ Reproduzir Áudio</button>
       <button id="stopAudio" class="audio-btn">⏹️ Parar Áudio</button>
-      <button id="playAD" class="audio-btn" disabled>♿ Audiodescrição (TTS)</button>
+      <button id="playAD" class="audio-btn" disabled>♿ Audiodescrição</button>
     </div>
+    <div id="voiceInfo" class="voice-info"></div>
   </div>
 
   <div id="comparisonArea"></div>
@@ -153,41 +183,13 @@ button:hover {
   <button id="recDelete" disabled>🗑️ Excluir Gravação</button>
 </div>
 
-
 <script>
-// =========================================================================
-// --- CONFIGURAÇÃO DE ÁUDIO E DADOS PERSONALIZADOS ---
-// =========================================================================
-
-// ⚠️ SUBSTITUA OS LINKS ABAIXO PELOS SEUS LINKS REAIS (Use URLs públicos como GitHub Pages)
-const audioLinks = {
-  // Use a chave do narrador e do evento para mapear o URL do seu MP3/OGG
-  "Colonização do Brasil (século XVI e XVII)": {
-    "Cronista português": "https://github.com/allineBrito/estudos_projetos/blob/main/audio/alne.ogg",
-    "Indígena": "https://raw.githubusercontent.com/allineBrito/estudos_projetos/main/audio/regencias_indigena.ogg",
-    "Africano escravizado": "https://raw.githubusercontent.com/allineBrito/estudos_projetos/main/audio/regencias_indigena.ogg",
-    "Estudante": "", // Deixe em branco, pois este usa a gravação local (localStorage)
-  },
-  "Período das Revoltas Regenciais (1831 – 1840)": {
-    "Cronista português": "https://[SEU_USUARIO].github.io/audio/regencias_cronista.ogg",
-    "Indígena": "https://[SEU_USUARIO].github.io/audio/regencias_indigena.ogg",
-    "Africano escravizado": "https://[SEU_USUARIO].github.io/audio/regencias_africano.ogg",
-    "Estudante": "",
-  },
-  "Guerra de Canudos (1893 – 1897)": {
-    "Cronista português": "https://[SEU_USUARIO].github.io/audio/canudos_cronista.ogg",
-    "Indígena": "https://[SEU_USUARIO].github.io/audio/canudos_indigena.ogg",
-    "Africano escravizado": "https://[SEU_USUARIO].github.io/audio/canudos_africano.ogg",
-    "Estudante": "",
-  } 
-};
-
 // --- Imagens de Perfil do Narrador ---
 const imageMapping = {
-  "Cronista português": "https://via.placeholder.com/280x150?text=Cronista+Portugues", 
-  "Indígena": "https://via.placeholder.com/280x150?text=Indigena",
-  "Africano escravizado": "https://via.placeholder.com/280x150?text=Africano+Escravizado",
-  "Estudante": "https://via.placeholder.com/280x150?text=Estudante"
+  "Cronista português": "https://exemplo.com/perfil_cronista.jpg", 
+  "Indígena": "https://exemplo.com/perfil_indigena.png",
+  "Africano escravizado": "https://exemplo.com/perfil_africano.png",
+  "Estudante": "https://exemplo.com/perfil_estudante.png"
 };
 
 // --- Imagens específicas por Evento e Narrador ---
@@ -198,7 +200,7 @@ const eventImageMapping = {
     "Africano escravizado": "https://ensinarhistoria.com.br/s21/wp-content/uploads/2015/06/07_Casa-de-negros_Rugendas.jpg",
   },
   "Período das Revoltas Regenciais (1831 – 1840)": {
-    "Cronista português": "https://static.preparaenem.com/2023/11/pintura-retratando-escravo-sendo-punido-em-um-pelourinho-em-alusao-a-revolta-dos-males.jpg",
+    "Cronista português": "https://exemplo.com/males_gravura_repressao.jpg",
     "Indígena": "https://www.pstu.org.br/wp-content/uploads/2019/01/cabanagem-capa-1122096.png",
     "Africano escravizado": "https://static.preparaenem.com/2023/11/pintura-retratando-escravo-sendo-punido-em-um-pelourinho-em-alusao-a-revolta-dos-males.jpg",
   },
@@ -209,13 +211,13 @@ const eventImageMapping = {
   }
 };
 
-// --- Narrativas (O texto ainda é necessário para a exibição e Audiodescrição) ---
+// --- Narrativas por Evento ---
 const data = {
   "Colonização do Brasil (século XVI e XVII)":{
     narrativas:{
-      "Cronista português":"Escutai, fiéis súditos do Reino de Portugal! O que contemplamos no Brasil não é apenas terra distante; é um novo e glorioso alicerce do nosso Império. Nosso propósito é a riqueza — clara e inabalável.",
-      "Indígena":"Quando o ‘povo do mar’ chegou, nossa vida mudou para sempre. Vieram como invasores, não como amigos. Para eles, a floresta era mercadoria; para nós, era mãe.",
-      "Africano escravizado":"Nossa história não começou no Brasil, mas nas terras que chamam de África. Fomos arrancados de nossos reinos à força. Nosso corpo pertencia ao senhor.",
+      "Cronista português":"Escutai, fiéis súditos do Reino de Portugal! O que contemplamos no Brasil não é apenas terra distante; é um novo e glorioso alicerce do nosso Império. Desde a chegada de Cabral, cumprimos o dever sagrado de tomar posse e levar a luz da civilização a estas vastidões do Novo Mundo.Nosso propósito é a riqueza — clara e inabalável. Fizemos do litoral nordestino o maior engenho açucareiro do mundo, produzindo o ‘Ouro Branco’ que transborda nos mercados da Europa e fortalece os cofres da Coroa. O sistema colonial erguido por nossas mãos é sólido e disciplinado: a monocultura, o Pacto Colonial, a ordem que assegura que toda abundância — do açúcar à madeira, dos animais ao tabaco — reverta em benefício exclusivo de Lisboa. Aqui não há desperdício; há apenas a força de uma economia disciplinada, moldada para a glória do Reino",
+      "Indígena":"Quando o ‘povo do mar’ chegou, nossa vida mudou para sempre. Vieram como invasores, não como amigos. No início, houve curiosidade: trocamos pau-brasil por ferro. Mas logo vimos a verdade — queriam nossa terra e nossos corpos. Para eles, a floresta era mercadoria; para nós, era mãe, caça e memória dos ancestrais. Tentaram nos escravizar em plantações erguidas sobre nossas terras. Chamaram-nos de ‘índios cativos’, venderam-nos como animais. A guerra deles era estranha: o escambo criava dependência, e suas doenças — varíola, sarampo — dizimavam aldeias inteiras, mais mortais que suas espadas. Resistimos. Lutamos por nossos chefes, por nossos, por nossa liberdade. Nossa terra, nosso povo, nossa cultura foram atacados. Mas não desaparecemos. Nossa memória, nossas línguas e nossa luta permanecem. Para nós, a história do Brasil é a história de uma invasão contínua que ainda combatemos ",
+      "Africano escravizado":"Nossa história não começou no Brasil, mas nas terras que chamam de África. Fomos arrancados de nossos reinos à força. O que os portugueses chamam de tráfico, nós chamamos de Grande Roubo: a captura brutal, a travessia nos tumbeiros, onde a fome e a doença matavam muitos antes mesmo de chegar aqui. Neste chão, não éramos vistos como pessoas, mas como ‘peças’. Nosso corpo pertencia ao senhor, nosso tempo era medido pelo sol e pelo chicote. Nas plantações e engenhos, o trabalho era incessante, a violência diária. Nossa vida valia menos que o açúcar que produzíamos. Mas nunca aceitamos o cativeiro. Nossa alma permaneceu livre. Resistimos em todos os lugares, construímos quilombos, guardamos nossas culturas. O Brasil dos séculos XVI e XVII foi genocídio e escravidão que enriqueceram Portugal — mas também foi a história de uma luta implacável pela dignidade, que jamais foi derrotada.",
       "Estudante":""
     },
     ad:{
@@ -227,9 +229,9 @@ const data = {
   },
   "Período das Revoltas Regenciais (1831 – 1840)":{
     narrativas:{
-      "Cronista português":"A ordem do Império está sob ataque, e a unidade nacional corre grave perigo! O nosso dever é manter o Brasil coeso, próspero e, acima de tudo, hierárquico.",
-      "Indígena":"Chamam-nos ‘cabanos’, ‘selvagens’, ‘desordeiros’, mas somos os verdadeiros donos desta floresta e destas águas. Pegamos em armas por fome e por justiça.",
-      "Africano escravizado":"O que nos trouxeram foi a escravidão, mas não conseguiram escravizar a nossa fé e o nosso conhecimento. Vimos a fraqueza do governo. Lutávamos pela liberdade da alma.",
+      "Cronista português":"A ordem do Império está sob ataque, e a unidade nacional corre grave perigo! A ausência de um imperador adulto tem encorajado facções insubordinadas e a pior escória da sociedade. Somos os herdeiros legítimos e os guardiões da civilização que Portugal trouxe a estas terras. O nosso dever é manter o Brasil coeso, próspero e, acima de tudo, hierárquico. As revoltas que vemos no Pará, na Bahia e no Maranhão não são por 'justiça' ou 'liberdade', mas sim por anarquia e fanatismo. São bandos de desocupados, índios, caboclos e africanos que, em sua ignorância, ameaçam a estrutura que sustenta a nossa economia. No Maranhão, são os 'balaios'; na Bahia, os negros muçulmanos que conspiram para destruir a nossa fé e a nossa propriedade! Nossas tropas agirão com a força necessária para esmagar estas sedições, restaurar a paz e provar ao mundo que o Brasil é uma nação que pode se governar. Quem ameaçar a ordem, ameaça o próprio Império, e será tratado como traidor da pátria.",
+      "Indígena":"Chamam-nos ‘cabanos’, ‘selvagens’, ‘desordeiros’, mas somos os verdadeiros donos desta floresta e destas águas. Nossos antepassados trabalharam esta terra; vimos os barões do açúcar e do gado roubarem-na enquanto se vestem de seda nas cidades. Sob as leis dos portugueses e dos Regentes, continuamos sendo os últimos.Quando D. Pedro I partiu, acreditamos que seríamos ouvidos — mas nada mudou para quem vive à beira do rio e na pobreza. Persistem a escravidão, a humilhação e o roubo do nosso sustento. Pegamos em armas por fome e por justiça: queremos governar o Pará, queremos que a terra pertença a quem a cultiva e que os tiranos que se alimentam do nosso suor sejam expulsos. Derramamos sangue porque lutamos para não morrer de miséria; a força da floresta está conosco, e nosso clamor por um governo justo é mais forte que as balas do Império.",
+      "Africano escravizado":"O que nos trouxeram foi a escravidão, mas não conseguiram escravizar a nossa fé e o nosso conhecimento. Vimos a fraqueza do governo quando o Imperador era apenas um menino. Sabíamos que era o momento de agir. Em toda a Bahia, nos engenhos e nas ruas de Salvador, estávamos prontos. Nós, os Malês, conhecemos a disciplina e a Lei de Alá. O nosso plano era claro: libertar todos os irmãos negros, matar os senhores brancos e os mulatos que nos oprimiam, e estabelecer uma terra de justiça e igualdade, guiada pela nossa religião. Não lutávamos apenas pela liberdade do corpo; lutávamos pela liberdade da alma e pela nossa dignidade. Fomos traídos, sim, e a repressão foi terrível. Os Regentes nos caçaram como animais, nos prenderam, nos chicotearam e nos executaram na praça pública. Mas o nosso levante provou o nosso poder: escravo não é inofensivo. Mostramos que, mesmo nas senzalas e nas cidades, o espírito africano se organiza, conspira e tem a força de abalar o poder dos brancos. Nossas ações ecoaram por toda a colônia, dando esperança a cada homem e mulher que sonha em quebrar suas correntes.",
       "Estudante":""
     },
     ad:{
@@ -241,26 +243,21 @@ const data = {
   },
   "Guerra de Canudos (1893 – 1897)":{
     narrativas:{
-      "Cronista português":"O que presenciamos em Canudos não é um levante popular, mas uma revolta de fanáticos contra a jovem República. A vitória da República é inquestionável.",
-      "Indígena":"Chamaram nossa vida de 'fanatismo' e nosso arraial de 'covil de bandidos', mas Canudos era o nosso refúgio. Lutamos até o último homem pela dignidade.",
-      "Africano escravizado":"Naquele tempo de mudança de lei, a vida no sertão era dura para o liberto. Fomos para Canudos porque o Conselheiro não olhava a cor. A guerra foi deles, mas a coragem foi nossa.",
+      "Cronista português":"O que presenciamos em Canudos não é um levante popular, mas uma revolta de fanáticos contra a jovem República. Antônio Conselheiro, esse beato lunático e perigoso, ilude as massas de miseráveis, prometendo um retorno à Monarquia e um fim aos impostos e ao casamento civil, pilares da nossa nova Ordem e Progresso. Desde a Proclamação da República, o sertão tem sido um foco de desobediência e superstição, e Canudos transformou-se em um foco de resistência à civilização. Eles acumularam armas e desafiaram a autoridade do Exército Nacional. Nossas tropas, representando a lei e a razão, tiveram que marchar sobre o arraial para extirpar este câncer social. A batalha foi longe e custou o sangue de muitos bravos. Mas a vitória da República é inquestionável: o local foi varrido, e a ameaça de um fanatismo político-religioso foi eliminada pela força da razão e do Estado. A história registrará a firmeza com que o Brasil moderno reagiu a essa praga da ignorância.",
+      "Indígena":"Chamaram nossa vida de 'fanatismo' e nosso arraial de 'covil de bandidos', mas Canudos era o nosso refúgio. O Conselheiro não era um rei, era um guia, um santo que nos deu esperança quando o mundo dos 'doutores' só nos dava fome e imposto. A seca castigava, e a República, que prometeu liberdade, só trouxe papeladas, novos fiscais e mais miséria. Quem era pobre e sem-terra podia construir uma vida no arraial: não havia pagamento, apenas trabalho coletivo e fé. Eles nos atacaram não por sermos contra a lei deles, mas por ousarmos ser independentes e felizes na nossa pobreza. Nossas mulheres e nossos filhos sofreram o terror dos canhões e fuzis. Lutamos até o último homem, não por um rei no Rio de Janeiro, mas pelo nosso chão, pela nossa fé e para não ter de morrer de novo nas mãos dos coronéis e do governo sem coração. Fomos massacrados, mas o que fizemos em Canudos foi uma luta pela dignidade do sertanejo.",
+      "Africano escravizado":"Naquele tempo de mudança de lei, a vida no sertão era dura para o liberto. A abolição veio, mas não veio a terra nem o trabalho digno. Muitos de nós, recém-saídos da escravidão, ou filhos de escravizados, fomos para Canudos porque o Conselheiro não olhava a cor nem a antiga condição. Lá, éramos todos irmãos, trabalhando a terra juntos. Era um lugar onde a 'Lei do Branco' não mandava e onde a nossa fé, misturada com as crenças do Conselheiro, nos protegia. Os fazendeiros e o Exército odiavam Canudos porque ali morava o medo de que o pobre tivesse poder. Eles tinham medo de ver o negro, o índio e o sertanejo juntos, rezando e construindo uma vida sem a dor do chicote. A guerra foi deles, mas a coragem foi nossa. Morremos defendendo a ideia de que o pobre tem direito a um pedaço de terra e a viver em paz, livre do chicote do coronel e da fome que o novo governo não se importava em curar.",
       "Estudante":""
   },
     ad:{
-      "Cronista português":"Soldados da república marchando contra os rebeldes.",
-      "Indígena":"Retrato de sertanejos e beatos em Canudos.",
-      "Africano escravizado":"Imagem de Antônio Conselheiro e seus seguidores.",
+      "Cronista português":"Gravura com repressão portuguesa ao levante dos Malês.",
+      "Indígena":"Visão indígena da resistência negra na cidade de Salvador.",
+      "Africano escravizado":"Imagem de africanos muçulmanos escravizados vestidos de branco em rebelião.",
       "Estudante":""
     }
   } 
-  
 };
 
-
-// =========================================================================
-// --- VARIÁVEIS E FUNÇÕES DE INICIALIZAÇÃO ---
-// =========================================================================
-
+// --- Elementos ---
 const eventoSelect=document.getElementById('eventoSelect');
 const narradorSelect=document.getElementById('narradorSelect');
 const narrativeText=document.getElementById('narrativeText');
@@ -271,21 +268,63 @@ const playADBtn=document.getElementById('playAD');
 const compareBtn=document.getElementById('compareBtn');
 const comparisonArea=document.getElementById('comparisonArea');
 const resetViewBtn=document.getElementById('resetView');
+const voiceIndicator = document.getElementById('voiceIndicator');
+const voiceInfo = document.getElementById('voiceInfo');
 
-// Elementos de gravação
+// --- Elementos de gravação ---
 const recStartBtn = document.getElementById('recStart');
 const recStopBtn = document.getElementById('recStop');
 const recPlayBtn = document.getElementById('recPlay');
 const recDeleteBtn = document.getElementById('recDelete');
 const recordingStatus = document.getElementById('recordingStatus');
 
-// Preencher eventos
+// --- Mapeamento de Vozes Específicas ---
+const voiceMapping = {
+  "Cronista português": "Google português do Brasil",
+  "Indígena": "Microsoft Maria - Portuguese (Brazil)",
+  "Africano escravizado": "Microsoft Daniel - Portuguese (Brazil)",
+  "Estudante": "Sua Voz"
+};
+
+// --- Configurações de Voz para Cada Personagem ---
+const voiceSettings = {
+  "Cronista português": {
+    rate: 0.9,
+    pitch: 1.0,
+    volume: 1.0,
+    voiceName: "Google português do Brasil",
+    displayName: "Voz Portuguesa"
+  },
+  "Indígena": {
+    rate: 1.0,
+    pitch: 1.1,
+    volume: 0.9,
+    voiceName: "Microsoft Maria - Portuguese (Brazil)",
+    displayName: "Voz Indígena"
+  },
+  "Africano escravizado": {
+    rate: 1.1,
+    pitch: 0.9,
+    volume: 1.0,
+    voiceName: "Microsoft Daniel - Portuguese (Brazil)",
+    displayName: "Voz Africana"
+  },
+  "Estudante": {
+    rate: 1.0,
+    pitch: 1.0,
+    volume: 1.0,
+    voiceName: "Sua Voz",
+    displayName: "Sua Voz"
+  }
+};
+
+// --- Preencher eventos ---
 Object.keys(data).forEach(ev=>{
   let opt=document.createElement('option'); opt.value=ev; opt.textContent=ev;
   eventoSelect.appendChild(opt);
 });
 
-// Preencher narradores
+// --- Preencher narradores ---
 function populateNarrators(){
   narradorSelect.innerHTML='';
   if(eventoSelect.value && data[eventoSelect.value]){
@@ -298,33 +337,62 @@ function populateNarrators(){
 eventoSelect.addEventListener('change', populateNarrators);
 populateNarrators();
 
-// Resetar
+// --- Atualizar indicador de voz ---
+function updateVoiceIndicator(narrador) {
+  const settings = voiceSettings[narrador];
+  if (settings) {
+    voiceIndicator.textContent = settings.displayName;
+    voiceIndicator.className = 'voice-indicator';
+    
+    // Adiciona classe específica para cada tipo de voz
+    if (narrador === "Cronista português") {
+      voiceIndicator.classList.add('voice-portugues');
+    } else if (narrador === "Indígena") {
+      voiceIndicator.classList.add('voice-indigena');
+    } else if (narrador === "Africano escravizado") {
+      voiceIndicator.classList.add('voice-africano');
+    } else if (narrador === "Estudante") {
+      voiceIndicator.classList.add('voice-estudante');
+    }
+  } else {
+    voiceIndicator.textContent = '';
+  }
+}
+
+// --- Reset ---
 resetViewBtn.addEventListener('click', ()=>{
   eventoSelect.selectedIndex=0;
   narradorSelect.innerHTML='';
-  populateNarrators();
   narrativeText.textContent='Selecione um evento e um narrador, depois clique em "Mostrar narrativa".';
   eventImageContainer.innerHTML='';
   playADBtn.disabled=true;
   comparisonArea.innerHTML='';
-  updateRecordingStatus('Nenhuma gravação salva para este evento');
+  updateRecordingStatus('');
+  updateVoiceIndicator('');
+  voiceInfo.textContent = '';
 });
 
-// Mostrar narrativa
+// --- Mostrar narrativa ---
 document.getElementById('showNarrative').addEventListener('click', ()=>{
   const ev=eventoSelect.value, nar=narradorSelect.value;
   if(ev && nar){
-    const audioUrl = audioLinks[ev] ? audioLinks[ev][nar] : null;
-
+    // Se for Estudante e houver gravação, mostra mensagem especial
     if (nar === "Estudante" && hasRecordingForCurrentEvent()) {
-      narrativeText.textContent = "🎤 Narrativa em áudio disponível (Gravação local do Estudante) - clique em 'Reproduzir Áudio'.";
-    } else if (audioUrl) {
-      narrativeText.textContent = `🎤 Narrativa disponível (Áudio customizado)`;
+      narrativeText.textContent = "🎤 Narrativa em áudio disponível - clique em 'Reproduzir Gravação' para ouvir.";
     } else {
       narrativeText.textContent = data[ev].narrativas[nar];
     }
-    
-    // Lógica da imagem
+
+    // Atualiza o indicador de voz
+    updateVoiceIndicator(nar);
+
+    // Atualiza informações da voz
+    const settings = voiceSettings[nar];
+    if (settings) {
+      voiceInfo.textContent = `Voz: ${settings.voiceName} | Velocidade: ${settings.rate} | Tom: ${settings.pitch}`;
+    }
+
+    // Lógica para obter a imagem específica da situação (Evento + Narrador)
     const eventImgSrc = eventImageMapping[ev] ? eventImageMapping[ev][nar] : '';
     let imageToShow = '';
     let altText = '';
@@ -333,6 +401,7 @@ document.getElementById('showNarrative').addEventListener('click', ()=>{
       imageToShow = eventImgSrc;
       altText = `Imagem do evento ${ev} na perspectiva de ${nar}`;
     } else {
+      // Fallback: se não houver imagem para a situação, usa a imagem do perfil do narrador
       imageToShow = imageMapping[nar] || '';
       altText = `Imagem ilustrativa do narrador ${nar}`;
     }
@@ -343,15 +412,14 @@ document.getElementById('showNarrative').addEventListener('click', ()=>{
       eventImageContainer.innerHTML = '';
     }
     
-    // O botão AD usa TTS do texto da AD (Fallback)
-    playADBtn.disabled = !data[ev].ad[nar];
-    playADBtn.onclick = () => speakText(data[ev].ad[nar], nar, "pt-BR");
-    
-    comparisonArea.innerHTML = '';
+    // Habilita o botão de Audiodescrição se houver texto AD
+    playADBtn.disabled=!data[ev].ad[nar];
+    playADBtn.onclick=()=>speakText(data[ev].ad[nar],"pt-BR", nar);
+    comparisonArea.innerHTML='';
   }
 });
 
-// Comparação
+// --- Comparação ---
 compareBtn.addEventListener('click', ()=>{
   const ev=eventoSelect.value;
   if(!ev) return;
@@ -365,149 +433,175 @@ compareBtn.addEventListener('click', ()=>{
     const div=document.createElement('div');
     div.className="card";
     
+    // Busca a imagem específica do evento/narrador (ou usa a imagem de perfil como fallback)
     const compareImgSrc = eventImageMapping[ev] && eventImageMapping[ev][n] ? eventImageMapping[ev][n] : imageMapping[n];
     const altText = `Imagem do evento ${ev} na perspectiva de ${n}`;
 
     let textoNarrativa = narrativas[n];
-    let playAction = '';
-    const audioUrl = audioLinks[ev] ? audioLinks[ev][n] : null;
-
-    // Prioridade 1: Gravação do Estudante (localStorage)
+    // Se for Estudante e houver gravação, mostra mensagem especial
     if (n === "Estudante" && hasRecordingForCurrentEvent()) {
       textoNarrativa = "🎤 Narrativa em áudio (gravação do estudante)";
-      playAction = `
-        const savedKey = 'recording_' + '${ev}'.replace(/\\s+/g, '_');
-        const savedData = localStorage.getItem(savedKey);
-        if (savedData) {
-          const uint8Array = new Uint8Array(JSON.parse(savedData));
-          const blob = new Blob([uint8Array], { type: 'audio/webm' });
-          const url = URL.createObjectURL(blob);
-          const audio = new Audio(url);
-          speechSynthesis.cancel();
-          audio.play().catch(e => console.error("Erro ao reproduzir gravação na comparação:", e));
-        }
-      `;
-    // Prioridade 2: Áudio Customizado (URL externo)
-    } else if (audioUrl) {
-      textoNarrativa = "🎤 Narrativa disponível (Áudio customizado)";
-      playAction = `playCustomAudio('${audioUrl}')`;
-    // Prioridade 3: TTS (Texto da narrativa, se não houver áudio customizado)
-    } else {
-      // Se não houver áudio customizado, usamos o texto original com TTS (como um último fallback)
-      playAction = `speakText(${JSON.stringify(textoNarrativa)}, ${JSON.stringify(n)}, "pt-BR")`;
     }
 
-    const adText = ads[n];
-    
-    div.innerHTML=      `<h3>${n}</h3>
+    div.innerHTML=`
+      <h3>${n} <span class="voice-indicator ${getVoiceClass(n)}">${voiceSettings[n].displayName}</span></h3>
       <p>${textoNarrativa}</p>
       <img src="${compareImgSrc}" alt="${altText}">
-      <button onclick='${playAction}'>▶️ Áudio</button>
-      <button onclick='speakText(${JSON.stringify(adText)}, ${JSON.stringify(n)}, "pt-BR")'>♿ Audiodescrição (TTS)</button>`;
-      
+      <button onclick='speakText(${JSON.stringify(textoNarrativa)},"pt-BR", "${n}")'>▶️ Áudio</button>
+      <button onclick='speakText(${JSON.stringify(ads[n])},"pt-BR", "${n}")'>♿ Audiodescrição</button>
+      <div class="voice-info">Voz: ${voiceSettings[n].voiceName}</div>
+    `;
     container.appendChild(div);
   });
   comparisonArea.appendChild(container);
 });
 
-
-// =========================================================================
-// --- LÓGICA DE ÁUDIO (Foco em Áudio Personalizado e Gravação) ---
-// =========================================================================
-
-let currentAudio = null; // Variável global para controlar a reprodução de áudio/gravação
-
-// --- TTS (Apenas para Fallback/Audiodescrição) ---
-let voices=[];
-function loadVoices(){ 
-    voices=speechSynthesis.getVoices();
-    checkSavedRecording();
+// Função auxiliar para obter classe CSS da voz
+function getVoiceClass(narrador) {
+  if (narrador === "Cronista português") return "voice-portugues";
+  if (narrador === "Indígena") return "voice-indigena";
+  if (narrador === "Africano escravizado") return "voice-africano";
+  if (narrador === "Estudante") return "voice-estudante";
+  return "";
 }
-speechSynthesis.onvoiceschanged=loadVoices;
+
+// ------------------------------------------------------------------
+// --- SISTEMA DE VOZES PERSONALIZADAS ---
+// ------------------------------------------------------------------
+
+// --- TTS (Text-to-Speech) com vozes personalizadas ---
+let voices=[];
+let voicesLoaded = false;
+
+function loadVoices(){ 
+  voices = speechSynthesis.getVoices();
+  voicesLoaded = true;
+  console.log("Vozes disponíveis:", voices.map(v => v.name));
+  
+  // Mostra as vozes disponíveis no console para debug
+  if (voices.length > 0) {
+    console.log("Vozes em português disponíveis:");
+    voices.filter(v => v.lang.includes('pt')).forEach(v => {
+      console.log(`- ${v.name} (${v.lang})`);
+    });
+  }
+}
+
+// Carregar vozes quando disponíveis
+speechSynthesis.onvoiceschanged = loadVoices;
 loadVoices();
 
-// Função que reproduz o Áudio Customizado via URL
-function playCustomAudio(url) {
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-    }
-    speechSynthesis.cancel();
+// Função para encontrar a melhor voz para um narrador
+function findBestVoice(narrator) {
+  if (!voicesLoaded || voices.length === 0) {
+    console.log("Vozes ainda não carregadas");
+    return null;
+  }
+
+  const desiredVoiceName = voiceSettings[narrator]?.voiceName;
+  
+  if (!desiredVoiceName) {
+    console.log(`Nenhuma voz definida para ${narrator}`);
+    return null;
+  }
+
+  // Tenta encontrar a voz exata
+  let voice = voices.find(v => 
+    v.name === desiredVoiceName && v.lang.includes('pt')
+  );
+
+  // Se não encontrar, tenta encontrar por similaridade
+  if (!voice) {
+    console.log(`Voz exata "${desiredVoiceName}" não encontrada. Buscando alternativas...`);
     
-    currentAudio = new Audio(url);
-    currentAudio.play().catch(error => {
-        console.error("Erro ao reproduzir áudio customizado. Verifique o link e CORS:", error);
-        alert("Erro ao reproduzir áudio. Verifique se o link está correto e se o servidor permite acesso (CORS).");
-    });
+    // Para o cronista português, prioriza vozes em português de Portugal
+    if (narrator === "Cronista português") {
+      voice = voices.find(v => 
+        v.lang.includes('pt-PT') || v.lang.includes('pt-PT')
+      );
+    }
+    // Para outros, prioriza português do Brasil
+    else {
+      voice = voices.find(v => 
+        v.lang.includes('pt-BR') || v.lang.includes('pt-BR')
+      );
+    }
+    
+    // Se ainda não encontrou, pega qualquer voz em português
+    if (!voice) {
+      voice = voices.find(v => v.lang.includes('pt'));
+    }
+  }
+
+  if (voice) {
+    console.log(`Voz selecionada para ${narrator}: ${voice.name} (${voice.lang})`);
+  } else {
+    console.log(`Nenhuma voz em português encontrada para ${narrator}`);
+  }
+
+  return voice;
 }
 
-// Manter a função TTS para Audiodescrição (AD) e o Fallback
-function getTTSVoice(narratorKey) {
-  // Retorna a primeira voz pt-BR disponível
-  const ptBRVoices = voices.filter(v => v.lang.startsWith('pt-BR') || v.lang.startsWith('pt-br'));
-  const betterVoice = ptBRVoices.find(v => v.name.includes('Google') || v.name.includes('Microsoft'));
-  return betterVoice || ptBRVoices[0] || null;
-}
-
-function speakText(text, narratorKey, lang){
+function speakText(text, lang, narrator){
+  // Para qualquer fala anterior
   speechSynthesis.cancel();
-  if (!text) return;
   
-  // Parâmetros de suavização para o TTS de AD
-  const voiceParams = {
-    "default": { rate: 1.0, pitch: 1.0 }
-  };
-  const params = voiceParams['default'];
-
-  const u=new SpeechSynthesisUtterance(text);
-  u.lang=lang;
-  u.voice=getTTSVoice(narratorKey);
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang;
   
-  u.rate = params.rate;
-  u.pitch = params.pitch;
+  // Aplica configurações específicas do narrador
+  const settings = voiceSettings[narrator];
+  if (settings) {
+    u.rate = settings.rate;
+    u.pitch = settings.pitch;
+    u.volume = settings.volume;
+    
+    // Encontra a melhor voz para este narrador
+    const voice = findBestVoice(narrator);
+    if (voice) {
+      u.voice = voice;
+      console.log(`Reproduzindo com voz: ${voice.name}`);
+    } else {
+      console.log("Usando voz padrão do navegador");
+    }
+  }
+  
+  // Eventos para debug
+  u.onstart = () => console.log(`Iniciando fala para ${narrator}`);
+  u.onend = () => console.log(`Fala concluída para ${narrator}`);
+  u.onerror = (event) => console.error(`Erro na fala:`, event);
   
   speechSynthesis.speak(u);
 }
 
+// Variável global para controlar o áudio REAL que está sendo reproduzido
+let currentAudio = null;
 
-// Lógica de reprodução do botão principal (prioriza áudio customizado/gravação)
 playAudioBtn.addEventListener('click', ()=>{
   const ev = eventoSelect.value;
   const nar = narradorSelect.value;
   
-  // Parar o áudio anterior (seja TTS ou gravação)
+  // 1. Para o áudio anterior, se estiver tocando
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
-    currentAudio = null;
   }
-  speechSynthesis.cancel(); 
 
-  const audioUrl = audioLinks[ev] ? audioLinks[ev][nar] : null;
-
-  // 1. Prioriza Gravação do Estudante (localStorage)
+  // Se for Estudante e houver gravação, toca a gravação
   if (nar === "Estudante" && hasRecordingForCurrentEvent()) {
     const recordingURL = getRecordingForCurrentEvent();
-    if (recordingURL) {
-        currentAudio = new Audio(recordingURL);
-        currentAudio.play().catch(error => {
-          console.error("Erro ao reproduzir gravação:", error);
-          updateRecordingStatus("❌ Erro ao reproduzir gravação");
-        });
-    }
+    currentAudio = new Audio(recordingURL);
+    currentAudio.play().catch(error => {
+      console.error("Erro ao reproduzir gravação:", error);
+      updateRecordingStatus("❌ Erro ao reproduzir gravação");
+    });
     return;
   }
-  
-  // 2. Tenta Áudio Customizado (URL)
-  if (audioUrl) {
-    playCustomAudio(audioUrl);
-    return;
-  }
-  
-  // 3. Fallback: TTS (só se não houver áudio customizado ou for o Estudante sem gravação)
+
+  // Para outros narradores, usa TTS com voz personalizada
   if (ev && nar) {
-    const textToSpeak = data[ev].narrativas[nar];
-    speakText(textToSpeak, nar, "pt-BR");
+    console.log(`Reproduzindo narrativa de ${nar} com voz personalizada`);
+    speakText(data[ev].narrativas[nar], "pt-BR", nar);
   }
 });
 
@@ -516,14 +610,12 @@ stopAudioBtn.addEventListener('click', ()=>{
   if(currentAudio){
     currentAudio.pause();
     currentAudio.currentTime = 0;
-    currentAudio = null;
   }
 });
 
-
-// =========================================================================
-// --- LÓGICA DE GRAVAÇÃO E SALVAMENTO (localStorage) ---
-// =========================================================================
+// ------------------------------------------------------------------
+// --- SISTEMA DE GRAVAÇÃO ---
+// ------------------------------------------------------------------
 
 let mediaRecorder = null;
 let audioChunks = [];
@@ -540,25 +632,18 @@ function updateRecordingStatus(message, type = '') {
 
 // Função para verificar se há gravação para o evento atual
 function hasRecordingForCurrentEvent() {
-  if (!eventoSelect.value) return false;
   const eventKey = `recording_${eventoSelect.value.replace(/\s+/g, '_')}`;
   return localStorage.getItem(eventKey) !== null;
 }
 
 // Função para obter a gravação do evento atual
 function getRecordingForCurrentEvent() {
-  if (!eventoSelect.value) return null;
   const eventKey = `recording_${eventoSelect.value.replace(/\s+/g, '_')}`;
   const savedRecording = localStorage.getItem(eventKey);
   if (savedRecording) {
-    try {
-      const uint8Array = new Uint8Array(JSON.parse(savedRecording));
-      const blob = new Blob([uint8Array], { type: 'audio/webm' });
-      return URL.createObjectURL(blob);
-    } catch (e) {
-      console.error("Erro ao carregar gravação do localStorage:", e);
-      return null;
-    }
+    const uint8Array = new Uint8Array(JSON.parse(savedRecording));
+    const blob = new Blob([uint8Array], { type: 'audio/webm' });
+    return URL.createObjectURL(blob);
   }
   return null;
 }
@@ -570,6 +655,7 @@ function saveRecording(blob) {
     const arrayBuffer = this.result;
     const uint8Array = new Uint8Array(arrayBuffer);
     
+    // Salva no localStorage com chave única baseada no evento
     const eventKey = `recording_${eventoSelect.value.replace(/\s+/g, '_')}`;
     localStorage.setItem(eventKey, JSON.stringify(Array.from(uint8Array)));
     
@@ -577,19 +663,16 @@ function saveRecording(blob) {
     recPlayBtn.disabled = false;
     recDeleteBtn.disabled = false;
     
+    // Atualiza a narrativa do Estudante para mostrar que há gravação
     if (narradorSelect.value === "Estudante") {
-      document.getElementById('showNarrative').click();
+      narrativeText.textContent = "🎤 Narrativa em áudio disponível - clique em 'Reproduzir Gravação' para ouvir.";
     }
-  };
-  reader.onerror = function() {
-      updateRecordingStatus('❌ Erro ao salvar gravação', 'recording-active');
   };
   reader.readAsArrayBuffer(blob);
 }
 
 // Função para excluir gravação
 function deleteRecording() {
-  if (!eventoSelect.value) return;
   const eventKey = `recording_${eventoSelect.value.replace(/\s+/g, '_')}`;
   localStorage.removeItem(eventKey);
   
@@ -597,20 +680,36 @@ function deleteRecording() {
   recPlayBtn.disabled = true;
   recDeleteBtn.disabled = true;
   
+  // Restaura a narrativa original do Estudante
   if (narradorSelect.value === "Estudante") {
-    document.getElementById('showNarrative').click();
+    narrativeText.textContent = data[eventoSelect.value].narrativas["Estudante"] || "";
   }
 }
 
-// Verificar se há gravação salva para o evento atual
+// Inicializar sistema de gravação
+async function initializeRecording() {
+  try {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      throw new Error('Seu navegador não suporta gravação de áudio');
+    }
+
+    // Verificar se há gravação salva para o evento atual
+    checkSavedRecording();
+
+  } catch (error) {
+    console.error('Erro ao inicializar gravação:', error);
+    recStartBtn.disabled = true;
+    updateRecordingStatus('❌ Gravação não suportada neste navegador');
+  }
+}
+
+// Verificar se há gravação salva
 function checkSavedRecording() {
   if (hasRecordingForCurrentEvent()) {
     recPlayBtn.disabled = false;
     recDeleteBtn.disabled = false;
     updateRecordingStatus('Gravação disponível para este evento');
   } else {
-    recPlayBtn.disabled = true;
-    recDeleteBtn.disabled = true;
     updateRecordingStatus('Nenhuma gravação salva para este evento');
   }
 }
@@ -623,6 +722,7 @@ recStartBtn.addEventListener('click', async () => {
   }
 
   try {
+    // Obter acesso ao microfone
     audioStream = await navigator.mediaDevices.getUserMedia({ 
       audio: {
         echoCancellation: true,
@@ -631,6 +731,7 @@ recStartBtn.addEventListener('click', async () => {
       } 
     });
 
+    // Criar MediaRecorder
     mediaRecorder = new MediaRecorder(audioStream, {
       mimeType: 'audio/webm;codecs=opus'
     });
@@ -647,6 +748,7 @@ recStartBtn.addEventListener('click', async () => {
       const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
       saveRecording(audioBlob);
       
+      // Parar todas as tracks do stream
       if (audioStream) {
         audioStream.getTracks().forEach(track => track.stop());
         audioStream = null;
@@ -656,27 +758,19 @@ recStartBtn.addEventListener('click', async () => {
     mediaRecorder.onerror = (event) => {
       console.error('Erro na gravação:', event.error);
       updateRecordingStatus('❌ Erro na gravação');
-      
-      if (audioStream) {
-        audioStream.getTracks().forEach(track => track.stop());
-        audioStream = null;
-      }
-      recStartBtn.disabled = false;
-      recStopBtn.disabled = true;
     };
 
+    // Iniciar gravação
     mediaRecorder.start();
     recStartBtn.disabled = true;
     recStopBtn.disabled = false;
     recPlayBtn.disabled = true;
-    recDeleteBtn.disabled = true;
     updateRecordingStatus('🔴 Gravando...', 'recording-active');
 
   } catch (error) {
     console.error('Erro ao acessar microfone:', error);
     updateRecordingStatus('❌ Não foi possível acessar o microfone');
     recStartBtn.disabled = true;
-    recStopBtn.disabled = true;
   }
 });
 
@@ -691,13 +785,14 @@ recStopBtn.addEventListener('click', () => {
 recPlayBtn.addEventListener('click', () => {
   const recordingURL = getRecordingForCurrentEvent();
   if (recordingURL) {
+    // Para qualquer áudio que esteja tocando
     if (currentAudio) {
       currentAudio.pause();
       currentAudio.currentTime = 0;
-      currentAudio = null;
     }
     speechSynthesis.cancel();
     
+    // Toca a gravação
     currentAudio = new Audio(recordingURL);
     currentAudio.play().catch(error => {
       console.error('Erro ao reproduzir áudio:', error);
@@ -707,9 +802,14 @@ recPlayBtn.addEventListener('click', () => {
 });
 
 recDeleteBtn.addEventListener('click', deleteRecording);
-eventoSelect.addEventListener('change', checkSavedRecording);
 
-checkSavedRecording(); 
+// Verificar gravação salva quando mudar o evento
+eventoSelect.addEventListener('change', () => {
+  checkSavedRecording();
+});
+
+// Inicializar o sistema de gravação quando a página carregar
+initializeRecording();
 </script>
 </body>
 </html>
